@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja-jp" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Let’s Encryptでのワイルドカード証明書更新をDNS認証で行う | Test Site!!!</title>
+
+      <link rel="stylesheet" href="/css/main.min.57cb5aa1f6171fd708dc50d2f9d2c5edd641ce1f2443c479abde3cd08840261a.css" integrity="sha256-V8taofYXH9cI3FDS&#43;dLF7dZBzh8kQ8R5q9480IhAJho=" crossorigin="anonymous">
+
+
+      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  <header>
+    <h1>Test Site!!!</h1>
+
+  </header>
+  <main>
+    
+  <h1>Let’s Encryptでのワイルドカード証明書更新をDNS認証で行う</h1>
+
+  
+  
+  <time datetime="2025-02-05T17:40:02&#43;09:00">February 5, 2025</time>
+
+  <p>ワイルドカード証明書をDNS認証で更新した時に、エラーが出たのでその対策。</p>
+<p>webrootで証明書を更新する場合はドキュメントルート直下の.well-known配下にチャレンジを自動的に生成するみたいだが、DNS認証では–manualで証明書を作成しているため、renew時には-–manual-auth-hookでDNSのTXTレコードを更新する自作スクリプトか、専用のプラグインの指定が必要になる。</p>
+<p><a href="https://shizuka-na-kazushi.style/2021/04/25/nodejsexpress-lets-encrypt-certbot-renewal/">https://shizuka-na-kazushi.style/2021/04/25/nodejsexpress-lets-encrypt-certbot-renewal/</a></p>
+<p>指定しなかったのでCloudFlare側でオリジンからデータが取得できなくなり
+526エラーが出ていた。</p>
+<p>オリジンサーバ側でrenewをした時のエラー</p>
+<pre tabindex="0"><code>Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ Processing /etc/letsencrypt/renewal/example.com.conf
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ Cert is due for renewal, auto-renewing...
+ Could not choose appropriate plugin: The manual plugin is not working; there may be problems with your existing configuration.
+ The error was: PluginError(&#39;An authentication script must be provided with --manual-auth-hook when using the manual plugin non-interactively.&#39;)
+ Failed to renew certificate perverseperson.net with error: The manual plugin is not working; there may be problems with your existing configuration.
+ The error was: PluginError(&#39;An authentication script must be provided with --manual-auth-hook when using the manual plugin non-interactively.&#39;)
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ All renewals failed. The following certificates could not be renewed:
+   /etc/letsencrypt/live/example.com/fullchain.pem (failure)
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 1 renew failure(s), 0 parse failure(s)
+</code></pre><p>自作スクリプトで更新する場合、renew時に–manual-auth-hookと–manual-cleanup-hookを使用してスクリプトを指定し、追加と削除を同時に行う。</p>
+<p>チャレンジは環境変数で提供され、CERTBOT_VALIDATION変数内にランダムな文字列が代入されている。
+この文字列をDNSの_acme-challenge.[ドメイン名]のTXTレコードを作成した時に追加する。</p>
+<p>クリーンアップでは追加したTXTレコードを削除する</p>
+<p><a href="https://eff-certbot.readthedocs.io/en/latest/using.html#hooks">https://eff-certbot.readthedocs.io/en/latest/using.html#hooks</a></p>
+<p><a href="https://eff-certbot.readthedocs.io/en/latest/using.html#manual-renewal">https://eff-certbot.readthedocs.io/en/latest/using.html#manual-renewal</a></p>
+<p>ちなみにCloudFlareのAPIドキュメントはこれ
+<a href="https://developers.cloudflare.com/api/operations/dns-records-for-a-zone-create-dns-record">https://developers.cloudflare.com/api/operations/dns-records-for-a-zone-create-dns-record</a></p>
+<p>主要なホスティングサービス向けのプラグインも公開されている</p>
+<p><a href="https://eff-certbot.readthedocs.io/en/latest/using.html#id2">https://eff-certbot.readthedocs.io/en/latest/using.html#id2</a></p>
+<p>必要に応じてサービスの再起動設定なども追加</p>
+<p><a href="https://qiita.com/kazuhidet/items/9d58a104f93d9ff7302d">https://qiita.com/kazuhidet/items/9d58a104f93d9ff7302d</a></p>
+  
+
+
+  </main>
+  <footer>
+    <p>Copyright 2025. All rights reserved.</p>
+
+  </footer>
+</body>
+</html>

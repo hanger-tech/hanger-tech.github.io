@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja-jp" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>RaspberryPi 2BでのAsterisk 20の構築 | Test Site!!!</title>
+
+      <link rel="stylesheet" href="/css/main.min.57cb5aa1f6171fd708dc50d2f9d2c5edd641ce1f2443c479abde3cd08840261a.css" integrity="sha256-V8taofYXH9cI3FDS&#43;dLF7dZBzh8kQ8R5q9480IhAJho=" crossorigin="anonymous">
+
+
+      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  <header>
+    <h1>Test Site!!!</h1>
+
+  </header>
+  <main>
+    
+  <h1>RaspberryPi 2BでのAsterisk 20の構築</h1>
+
+  
+  
+  <time datetime="2025-02-05T17:32:28&#43;09:00">February 5, 2025</time>
+
+  <p>Asterisk 20をラズパイ上で構築する方法があまりなかったので手順を記載</p>
+<p>アナログ回線は使用しないのでDAHDIなどはインストールしていない</p>
+<p>注意事項</p>
+<p>以前から使用していたSIPチャンネルはPJSIPチャンネルに変更され、SIPチャンネルはコアサポートを受けなくなった</p>
+<p>ver13.8.0以降はPJSIPがAsteriskにバンドルされビルドプロセス中にpjprojectのtarballをダウンロードしパッチが適用されることによって使用できるようになった
+バンドル以外でのpjprojectのインストールはサポートされなくなったらしい
+<a href="https://wiki.asterisk.org/wiki/display/AST/PJSIP-pjproject">https://wiki.asterisk.org/wiki/display/AST/PJSIP-pjproject</a></p>
+<p>公式サイトからver20.0.0のtarball圧縮ファイルをダウンロード
+<a href="https://wiki.asterisk.org/wiki/pages/viewpage.action?pageId=4817506">https://wiki.asterisk.org/wiki/pages/viewpage.action?pageId=4817506</a></p>
+<pre tabindex="0"><code>wget https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-20.2.0.tar.gz
+</code></pre><p>展開する</p>
+<pre tabindex="0"><code>tar xvf asterisk-20.2.0.tar.gz
+</code></pre><p>ディレクトリを移動</p>
+<pre tabindex="0"><code>cd asterisk-20.2.0
+</code></pre><p>ビルド要件に必要な開発環境を整える
+手動による開発環境構築も可能だが、スクリプトによる自動インストールも可能
+自動での場合はパッケージマネージャを使用するので、スーパーユーザ権限が必要
+<a href="https://docs.asterisk.org/Getting-Started/Installing-Asterisk/Installing-Asterisk-From-Source/Prerequisites/Checking-Asterisk-Requirements/#using-install_prereq">https://docs.asterisk.org/Getting-Started/Installing-Asterisk/Installing-Asterisk-From-Source/Prerequisites/Checking-Asterisk-Requirements/#using-install_prereq</a></p>
+<p>OSを最新の状態に更新したあと、再起動する</p>
+<pre tabindex="0"><code>apt update &amp;&amp; apt upgrade -y &amp;&amp; apt dist-upgrade -y
+reboot
+</code></pre><p>再起動後ディレクトリに移動する</p>
+<pre tabindex="0"><code>cd asterisk-20.2.0
+</code></pre><p>依存関係を満たすための自動インストール用のスクリプトを実行</p>
+<pre tabindex="0"><code>contrib/scripts/install_prereq install
+</code></pre><p>手動の場合はSystem Requirementsを参考にインストールする
+<a href="https://wiki.asterisk.org/wiki/display/AST/System+Requirements">https://wiki.asterisk.org/wiki/display/AST/System+Requirements</a></p>
+<p>Asteriskをコンパイルしてインストールを開始する
+<a href="https://wiki.asterisk.org/wiki/display/AST/Checking+Asterisk+Requirements">https://wiki.asterisk.org/wiki/display/AST/Checking+Asterisk+Requirements</a></p>
+<p>要件のチェックを実行</p>
+<pre tabindex="0"><code>./configure
+</code></pre><p>./configureが正常に終了すると@の中に*がある様なメッセージが出力されます</p>
+<p>通常はそのままで問題ないが、もし必要・不必要なモジュールなどがあればMenuselectを使用する
+（端末ウィンドウのサイズが80×27以上なければエラーメッセージがでる）
+<a href="https://wiki.asterisk.org/wiki/display/AST/Using+Menuselect+to+Select+Asterisk+Options">https://wiki.asterisk.org/wiki/display/AST/Using+Menuselect+to+Select+Asterisk+Options</a></p>
+<pre tabindex="0"><code>make menuselect
+</code></pre><p>Asteriskをコンパイルする
+（オプション “-j CPUコア数” を付与するとCPUコア数分を並列でコンパイルする）</p>
+<pre tabindex="0"><code>make # -j cpuコア数
+</code></pre><p>コンパイルしたプログラムとモジュールをインストール</p>
+<pre tabindex="0"><code>make install
+</code></pre><p>必要に応じてサンプルの設定ファイルをインストールする</p>
+<p>すべての設定ファイルをインストールする場合
+<a href="https://wiki.asterisk.org/wiki/display/AST/Installing+Sample+Files">https://wiki.asterisk.org/wiki/display/AST/Installing+Sample+Files</a></p>
+<pre tabindex="0"><code>make samples
+</code></pre><p>PBX関係の設定ファイのみの場合</p>
+<pre tabindex="0"><code>make basic-pbx
+</code></pre><p>Asteriskをデーモンとして起動させる場合はスタートアップスクリプトをインストールする
+<a href="https://wiki.asterisk.org/wiki/display/AST/Installing+Initialization+Scripts">https://wiki.asterisk.org/wiki/display/AST/Installing+Initialization+Scripts</a></p>
+<pre tabindex="0"><code>make config
+</code></pre><p>ログをローテーションさせる場合</p>
+<pre tabindex="0"><code>make install-logrotate
+</code></pre><p>ドキュメントをインストールする</p>
+<pre tabindex="0"><code>make progdocs
+</code></pre><p>以上</p>
+<p>Hello world
+<a href="https://wiki.asterisk.org/wiki/display/AST/Hello+World">https://wiki.asterisk.org/wiki/display/AST/Hello+World</a></p>
+<p>削除系</p>
+<p>プログラムをアンインストールする場合</p>
+<pre tabindex="0"><code>make uninstall
+</code></pre><p>ログ及びspoolディレクトリなどもまとめて削除する場合</p>
+<pre tabindex="0"><code>make uninstall-all
+</code></pre><p>再度ビルドするために./configureからやり直す場合は、ビルドファイルや構成ファイルを削除する</p>
+<pre tabindex="0"><code>make dist-clean
+</code></pre>
+  
+
+
+  </main>
+  <footer>
+    <p>Copyright 2025. All rights reserved.</p>
+
+  </footer>
+</body>
+</html>
