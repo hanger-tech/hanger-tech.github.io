@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja-jp" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Ubuntu24.04でUSキーボードに変更する | はんがーの備忘録</title>
+
+      <link rel="stylesheet" href="/css/main.min.57cb5aa1f6171fd708dc50d2f9d2c5edd641ce1f2443c479abde3cd08840261a.css" integrity="sha256-V8taofYXH9cI3FDS&#43;dLF7dZBzh8kQ8R5q9480IhAJho=" crossorigin="anonymous">
+
+
+      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  <header>
+    <h1>はんがーの備忘録</h1>
+
+  </header>
+  <main>
+    
+  <h1>Ubuntu24.04でUSキーボードに変更する</h1>
+
+  
+  
+  <time datetime="2025-02-19T13:27:18&#43;09:00">February 19, 2025</time>
+
+  <p>Ubuntu24.04でUSキーボードに変更する方法</p>
+<p>参考: <a href="https://qiita.com/nanbuwks/items/bcd6c838487c906a70e1" title="[Ubuntu20.04 で US キーボードに変更">Ubuntu20.04 で US キーボードに変更</a></p>
+<h3 id="コンソールをusキーボードに変更">コンソールをUSキーボードに変更</h3>
+<pre tabindex="0"><code>sudo dpkg-reconfigure keyboard-configuration
+</code></pre><p>Generic 105-key PC -&gt; Generic 102-key PC
+-&gt; English (US) -&gt; English (US)
+-&gt; キーボード配置のデフォルト
+-&gt; コンポーズキーなし
+-&gt; いいえ</p>
+<h3 id="guiでusキーボードに変更">GUIでUSキーボードに変更</h3>
+<p>設定 -&gt; キーボード
+入力ソースの一番上にある日本語を削除</p>
+<p>入力ソースの追加 -&gt; ⋮ -&gt; その他
+英語(US)</p>
+<p>入力ソースの一番上に英語(US)を移動する</p>
+<p>画面右上の通知アイコン
+英語(US)から日本語(Mozc)に変更
+-&gt; 日本語(Mozc)から英語(US)に変更</p>
+  
+
+
+  </main>
+  <footer>
+    <p>Copyright 2025. All rights reserved.</p>
+
+  </footer>
+</body>
+</html>

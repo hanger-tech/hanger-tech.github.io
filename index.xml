@@ -6,8 +6,22 @@
     <description>Recent content in Home on はんがーの備忘録</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 06 Feb 2025 22:32:23 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 19 Feb 2025 14:07:23 +0900</lastBuildDate>
     <atom:link href="https://www.perverseperson.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hyper V上のUbuntu24.04で解像度を変更する方法</title>
+      <link>https://www.perverseperson.net/posts/hyper-v%E4%B8%8A%E3%81%AEubuntu24.04%E3%81%A7%E8%A7%A3%E5%83%8F%E5%BA%A6%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Wed, 19 Feb 2025 14:07:23 +0900</pubDate>
+      <guid>https://www.perverseperson.net/posts/hyper-v%E4%B8%8A%E3%81%AEubuntu24.04%E3%81%A7%E8%A7%A3%E5%83%8F%E5%BA%A6%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/</guid>
+      <description>&lt;p&gt;Hyper-v上で解像度を変更する&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu24.04でUSキーボードに変更する</title>
+      <link>https://www.perverseperson.net/posts/ubuntu24.04%E3%81%A7us%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%81%AB%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/</link>
+      <pubDate>Wed, 19 Feb 2025 13:27:18 +0900</pubDate>
+      <guid>https://www.perverseperson.net/posts/ubuntu24.04%E3%81%A7us%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%81%AB%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/</guid>
+      <description>&lt;p&gt;Ubuntu24.04でUSキーボードに変更する方法&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Hoguで生成されるページに自動的にバージョン情報が挿入させない方法</title>
       <link>https://www.perverseperson.net/posts/hugo%E3%81%A7%E7%94%9F%E6%88%90%E3%81%95%E3%82%8C%E3%82%8B%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AB%E8%87%AA%E5%8B%95%E7%9A%84%E3%81%AB%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E6%83%85%E5%A0%B1%E3%81%8C%E6%8C%BF%E5%85%A5%E3%81%95%E3%81%9B%E3%81%AA%E3%81%84%E6%96%B9%E6%B3%95/</link>
