@@ -22,6 +22,39 @@
   <h1>Posts</h1>
   
   
+    <h2><a href="/posts/yamaha-nvr510%E3%81%A7%E3%81%AE%E3%83%95%E3%83%AC%E3%83%83%E3%83%84%E5%85%89%E3%83%8D%E3%82%AF%E3%82%B9%E3%83%88%E3%81%AE%E3%81%B2%E3%81%8B%E3%82%8A%E9%9B%BB%E8%A9%B1%E3%81%AE%E8%A8%AD%E5%AE%9A/">YAMAHA NVR510小型ONU経由でのフレッツ光ネクストのひかり電話の設定</a></h2>
+    <p>NVR510小型ONU経由でのフレッツ光ネクストのひかり電話の設定</p>
+<pre tabindex="0"><code class="language-IPv6設定" data-lang="IPv6設定">ipv6 route default gateway dhcp onu1
+ipv6 prefix 1 dhcp-prefix@onu1::/64
+ipv6 lan1 address dhcp-prefix@onu1::1/64
+ipv6 lan1 rtadv send 1 o_flag=on
+ipv6 lan1 dhcp service server
+</code></pre><pre tabindex="0"><code class="language-小型ONUインターフェースの設定" data-lang="小型ONUインターフェースの設定">description onu1 &#34;説明&#34;
+ipv6 onu1 address dhcp
+ipv6 onu1 mtu 1500
+ipv6 onu1 secure filter in 102000
+ipv6 onu1 secure filter out 102099 dynamic 102098 102099
+ipv6 onu1 dhcp service client
+ngn type onu1 ntt
+</code></pre><pre tabindex="0"><code class="language-IPv6フィルタ設定" data-lang="IPv6フィルタ設定">ipv6 filter 102000 pass * * icmp6,4,udp * 546
+ipv6 filter 102099 pass * * * * *
+ipv6 filter dynamic 102098 * * tcp
+ipv6 filter dynamic 102099 * * udp
+</code></pre><pre tabindex="0"><code class="language-DNSの設定" data-lang="DNSの設定">dns host lan1
+dns service fallback on
+dns server dhcp onu1
+dns server select 500000 dhcp onu1 any .
+dns private address spoof on
+dns private name setup.netvolante.jp
+</code></pre><pre tabindex="0"><code class="language-アナログ電話設定とSIPの設定" data-lang="アナログ電話設定とSIPの設定">analog supplementary-service pseudo call-waiting
+analog extension emergency-call-dial type normal-number
+analog extension dial prefix sip prefix=&#34;9#&#34;
+analog extension dial prefix port=1 ngn onu1
+analog extension dial prefix port=2 ngn onu1
+sip use on
+sip codec permit onu1 g711u
+</code></pre>
+  
     <h2><a href="/posts/yamaha-nvr510%E3%81%A7%E3%81%AE%E5%B0%8F%E5%9E%8Bonu%E7%B5%8C%E7%94%B1%E3%81%A7%E3%81%AEdhcpv6-pd%E3%81%A8transixipip6%E3%83%88%E3%83%B3%E3%83%8D%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%AE%E8%A8%AD%E5%AE%9A/">YAMAHA NVR510での小型ONU経由でのDHCPv6-PDとTransix(IPIP6トンネリング)の設定</a></h2>
     <p>NVR510での小型ONU経由でのDHCPv6-PDとTransixの設定</p>
   

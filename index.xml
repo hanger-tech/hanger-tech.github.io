@@ -6,8 +6,15 @@
     <description>Recent content in Home on はんがーの備忘録</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 15 Mar 2025 18:11:03 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 15 Mar 2025 18:33:18 +0900</lastBuildDate>
     <atom:link href="https://www.perverseperson.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>YAMAHA NVR510小型ONU経由でのフレッツ光ネクストのひかり電話の設定</title>
+      <link>https://www.perverseperson.net/posts/yamaha-nvr510%E3%81%A7%E3%81%AE%E3%83%95%E3%83%AC%E3%83%83%E3%83%84%E5%85%89%E3%83%8D%E3%82%AF%E3%82%B9%E3%83%88%E3%81%AE%E3%81%B2%E3%81%8B%E3%82%8A%E9%9B%BB%E8%A9%B1%E3%81%AE%E8%A8%AD%E5%AE%9A/</link>
+      <pubDate>Sat, 15 Mar 2025 18:33:18 +0900</pubDate>
+      <guid>https://www.perverseperson.net/posts/yamaha-nvr510%E3%81%A7%E3%81%AE%E3%83%95%E3%83%AC%E3%83%83%E3%83%84%E5%85%89%E3%83%8D%E3%82%AF%E3%82%B9%E3%83%88%E3%81%AE%E3%81%B2%E3%81%8B%E3%82%8A%E9%9B%BB%E8%A9%B1%E3%81%AE%E8%A8%AD%E5%AE%9A/</guid>
+      <description>&lt;p&gt;NVR510小型ONU経由でのフレッツ光ネクストのひかり電話の設定&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-IPv6設定&#34; data-lang=&#34;IPv6設定&#34;&gt;ipv6 route default gateway dhcp onu1&#xA;ipv6 prefix 1 dhcp-prefix@onu1::/64&#xA;ipv6 lan1 address dhcp-prefix@onu1::1/64&#xA;ipv6 lan1 rtadv send 1 o_flag=on&#xA;ipv6 lan1 dhcp service server&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-小型ONUインターフェースの設定&#34; data-lang=&#34;小型ONUインターフェースの設定&#34;&gt;description onu1 &amp;#34;説明&amp;#34;&#xA;ipv6 onu1 address dhcp&#xA;ipv6 onu1 mtu 1500&#xA;ipv6 onu1 secure filter in 102000&#xA;ipv6 onu1 secure filter out 102099 dynamic 102098 102099&#xA;ipv6 onu1 dhcp service client&#xA;ngn type onu1 ntt&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-IPv6フィルタ設定&#34; data-lang=&#34;IPv6フィルタ設定&#34;&gt;ipv6 filter 102000 pass * * icmp6,4,udp * 546&#xA;ipv6 filter 102099 pass * * * * *&#xA;ipv6 filter dynamic 102098 * * tcp&#xA;ipv6 filter dynamic 102099 * * udp&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-DNSの設定&#34; data-lang=&#34;DNSの設定&#34;&gt;dns host lan1&#xA;dns service fallback on&#xA;dns server dhcp onu1&#xA;dns server select 500000 dhcp onu1 any .&#xA;dns private address spoof on&#xA;dns private name setup.netvolante.jp&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-アナログ電話設定とSIPの設定&#34; data-lang=&#34;アナログ電話設定とSIPの設定&#34;&gt;analog supplementary-service pseudo call-waiting&#xA;analog extension emergency-call-dial type normal-number&#xA;analog extension dial prefix sip prefix=&amp;#34;9#&amp;#34;&#xA;analog extension dial prefix port=1 ngn onu1&#xA;analog extension dial prefix port=2 ngn onu1&#xA;sip use on&#xA;sip codec permit onu1 g711u&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
     <item>
       <title>YAMAHA NVR510での小型ONU経由でのDHCPv6-PDとTransix(IPIP6トンネリング)の設定</title>
       <link>https://www.perverseperson.net/posts/yamaha-nvr510%E3%81%A7%E3%81%AE%E5%B0%8F%E5%9E%8Bonu%E7%B5%8C%E7%94%B1%E3%81%A7%E3%81%AEdhcpv6-pd%E3%81%A8transixipip6%E3%83%88%E3%83%B3%E3%83%8D%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%AE%E8%A8%AD%E5%AE%9A/</link>
