@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja-jp" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>YAMAHA NVR510での小型ONU経由でのDHCPv6-PDとTransix(IPIP6トンネリング)の設定 | はんがーの備忘録</title>
+
+      <link rel="stylesheet" href="/css/main.min.57cb5aa1f6171fd708dc50d2f9d2c5edd641ce1f2443c479abde3cd08840261a.css" integrity="sha256-V8taofYXH9cI3FDS&#43;dLF7dZBzh8kQ8R5q9480IhAJho=" crossorigin="anonymous">
+
+
+      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  <header>
+    <h1><a style="color:#000;text-decoration:none" href="/">はんがーの備忘録</a></h1>
+
+  </header>
+  <main>
+    
+  <h1>YAMAHA NVR510での小型ONU経由でのDHCPv6-PDとTransix(IPIP6トンネリング)の設定</h1>
+
+  
+  
+  <time datetime="2025-03-15T18:11:03&#43;09:00">March 15, 2025</time>
+
+  <p>NVR510での小型ONU経由でのDHCPv6-PDとTransixの設定</p>
+<pre tabindex="0"><code class="language-IPv4設定" data-lang="IPv4設定">ip route default gateway tunnel 1
+ip lan1 address ローカル側のIPアドレス/ネットマスク
+</code></pre><pre tabindex="0"><code class="language-IPv6設定" data-lang="IPv6設定">ipv6 route default gateway dhcp onu1
+ipv6 prefix 1 dhcp-prefix@onu1::/64
+ipv6 lan1 address dhcp-prefix@onu1::1/64
+ipv6 lan1 rtadv send 1 o_flag=on
+ipv6 lan1 dhcp service server
+</code></pre><pre tabindex="0"><code class="language-ONUインターフェース設定" data-lang="ONUインターフェース設定">description onu1 &#34;説明&#34;
+ip onu1 address dhcp
+ipv6 onu1 address dhcp
+ipv6 onu1 mtu 1500
+ipv6 onu1 secure filter in 102000
+ipv6 onu1 secure filter out 102099 dynamic 102098 102099
+ipv6 onu1 dhcp service client
+</code></pre><pre tabindex="0"><code class="language-IPIPトンネリング(Transix)" data-lang="IPIPトンネリング(Transix)">tunnel select 1
+ tunnel encapsulation ipip
+ tunnel endpoint name エンドポイントFQDN fqdn
+ ip tunnel mtu 1460
+ ip tunnel secure filter in 200010 200020 200021 200030
+ ip tunnel secure filter out 200011 200020 200021 200099 dynamic 200098 200099
+ tunnel enable 1
+</code></pre><pre tabindex="0"><code class="language-IPv4フィルタ設定" data-lang="IPv4フィルタ設定">ip filter 200010 reject 10.0.0.0/8,172.16.0.0/12,192.168.0.0/16 * * * *
+ip filter 200011 reject * 10.0.0.0/8,172.16.0.0/12,192.168.0.0/16 * * *
+ip filter 200020 reject * * udp,tcp 135,netbios_ns-netbios_ssn,445 *
+ip filter 200021 reject * * udp,tcp * 135,netbios_ns-netbios_ssn,445
+ip filter 200030 pass * * icmp
+ip filter 200099 pass * * * * *
+ip filter dynamic 200098 * * tcp
+ip filter dynamic 200099 * * udp
+</code></pre><pre tabindex="0"><code class="language-IPv6フィルタ設定" data-lang="IPv6フィルタ設定">ipv6 filter 102000 pass * * icmp6,4,udp * 546
+ipv6 filter 102099 pass * * * * *
+ipv6 filter dynamic 102098 * * tcp
+ipv6 filter dynamic 102099 * * udp
+</code></pre><pre tabindex="0"><code class="language-DHCP設定" data-lang="DHCP設定">dhcp service server
+dhcp server rfc2131 compliant except remain-silent
+dhcp scope 1 先頭IPアドレス-末尾IPアドレス/ネットマスク
+dhcp client release linkdown on
+</code></pre><pre tabindex="0"><code class="language-DNS設定" data-lang="DNS設定">dns host lan1
+dns service fallback on
+dns server dhcp onu1
+dns server select 500000 dhcp onu1 any .
+dns private address spoof on
+dns private name setup.netvolante.jp
+</code></pre>
+  
+
+
+  </main>
+  <footer>
+    <p>Copyright 2025. All rights reserved.</p>
+
+  </footer>
+</body>
+</html>
