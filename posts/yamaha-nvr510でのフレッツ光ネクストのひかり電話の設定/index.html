@@ -1,68 +1,168 @@
 <!DOCTYPE html>
-<html lang="ja-jp" dir="ltr">
-<head>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>YAMAHA NVR510小型ONU経由でのフレッツ光ネクストのひかり電話の設定 | はんがーの備忘録</title>
+<html>
+	<head><title>YAMAHA NVR510小型ONU経由でのフレッツ光ネクストのひかり電話の設定 | はんがーの備忘録</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ja" />
+<meta name="viewport" content="width=device-width, initial-scale-1.0" />
+<meta name="description" content="はんがーが内容を見返すためのサイト" />
+<meta name="author" content="はんがー" />
+<meta name="robots" content="index, follow" />
+<meta name="google-adsense-account" content="ca-pub-9916094978890818"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9916094978890818"
+     crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/scss/main.min.css">
 
-      <link rel="stylesheet" href="/css/main.min.57cb5aa1f6171fd708dc50d2f9d2c5edd641ce1f2443c479abde3cd08840261a.css" integrity="sha256-V8taofYXH9cI3FDS&#43;dLF7dZBzh8kQ8R5q9480IhAJho=" crossorigin="anonymous">
-
-
-      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
-
-
+<link rel="icon" href="/favicon.icon" />
 </head>
-<body>
-  <header>
-    <h1><a style="color:#000;text-decoration:none" href="/">はんがーの備忘録</a></h1>
+    <body>
+		<div class="layout-wrapper">
+			<header class="site-header"><div class="container">
+ <h2 class="logo">
+  <a href="/">はんがーの備忘録</a>
+ </h2>
+ <nav class="nav">
+  <a href="/" class="nav-link">TOP</a>
+  <a href="/about" class="nav-link">About</a>
+  <a href="/contact" class="nav-link">Contact</a>
+ </nav>
+</div>
+</header>
 
-  </header>
-  <main>
-    
-  <h1>YAMAHA NVR510小型ONU経由でのフレッツ光ネクストのひかり電話の設定</h1>
+			<div class="ad-mobile"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9916094978890818"
+     crossorigin="anonymous"></script>
 
-  
-  
-  <time datetime="2025-03-15T18:33:18&#43;09:00">March 15, 2025</time>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9916094978890818"
+     data-ad-slot="7505991866"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
 
-  <p>NVR510小型ONU経由でのフレッツ光ネクストのひかり電話の設定</p>
-<pre tabindex="0"><code class="language-IPv6設定" data-lang="IPv6設定">ipv6 route default gateway dhcp onu1
+			<main class="main-layout">
+				<article class="content">
+ <h2 class="title">YAMAHA NVR510小型ONU経由でのフレッツ光ネクストのひかり電話の設定</h2>
+ <p>NVR510小型ONU経由でのフレッツ光ネクストのひかり電話の設定</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">ipv6 route default gateway dhcp onu1
 ipv6 prefix 1 dhcp-prefix@onu1::/64
 ipv6 lan1 address dhcp-prefix@onu1::1/64
 ipv6 lan1 rtadv send 1 o_flag=on
 ipv6 lan1 dhcp service server
-</code></pre><pre tabindex="0"><code class="language-小型ONUインターフェースの設定" data-lang="小型ONUインターフェースの設定">description onu1 &#34;説明&#34;
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">description onu1 &#34;説明&#34;
 ipv6 onu1 address dhcp
 ipv6 onu1 mtu 1500
 ipv6 onu1 secure filter in 102000
 ipv6 onu1 secure filter out 102099 dynamic 102098 102099
 ipv6 onu1 dhcp service client
 ngn type onu1 ntt
-</code></pre><pre tabindex="0"><code class="language-IPv6フィルタ設定" data-lang="IPv6フィルタ設定">ipv6 filter 102000 pass * * icmp6,4,udp * 546
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">ipv6 filter 102000 pass * * icmp6,4,udp * 546
 ipv6 filter 102099 pass * * * * *
 ipv6 filter dynamic 102098 * * tcp
 ipv6 filter dynamic 102099 * * udp
-</code></pre><pre tabindex="0"><code class="language-DNSの設定" data-lang="DNSの設定">dns host lan1
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">dns host lan1
 dns service fallback on
 dns server dhcp onu1
 dns server select 500000 dhcp onu1 any .
 dns private address spoof on
 dns private name setup.netvolante.jp
-</code></pre><pre tabindex="0"><code class="language-アナログ電話設定とSIPの設定" data-lang="アナログ電話設定とSIPの設定">analog supplementary-service pseudo call-waiting
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">analog supplementary-service pseudo call-waiting
 analog extension emergency-call-dial type normal-number
 analog extension dial prefix sip prefix=&#34;9#&#34;
 analog extension dial prefix port=1 ngn onu1
 analog extension dial prefix port=2 ngn onu1
 sip use on
 sip codec permit onu1 g711u
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
+</article>
+
+
+				<aside class="sidebar">
+					<div class="ad-desktop"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9916094978890818"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9916094978890818"
+     data-ad-slot="7505991866"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+					</div>
+				</aside>
+			</main>
+			<footer class="site-footer"><div class="container">
+ <div class="copylight">
+  &copy; はんがー 
+   2025
   
-
-
-  </main>
-  <footer>
-    <p>Copyright 2025. All rights reserved.</p>
-
-  </footer>
-</body>
+ </div>
+</div>
+</footer>
+		</div>
+    </body>
 </html>

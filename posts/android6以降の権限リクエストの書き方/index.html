@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head><title>Android6以降の権限リクエストの書き方 | はんがーの備忘録</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ja" />
+<meta name="viewport" content="width=device-width, initial-scale-1.0" />
+<meta name="description" content="はんがーが内容を見返すためのサイト" />
+<meta name="author" content="はんがー" />
+<meta name="robots" content="index, follow" />
+<meta name="google-adsense-account" content="ca-pub-9916094978890818"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9916094978890818"
+     crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/scss/main.min.css">
+
+<link rel="icon" href="/favicon.icon" />
+</head>
+    <body>
+		<div class="layout-wrapper">
+			<header class="site-header"><div class="container">
+ <h2 class="logo">
+  <a href="/">はんがーの備忘録</a>
+ </h2>
+ <nav class="nav">
+  <a href="/" class="nav-link">TOP</a>
+  <a href="/about" class="nav-link">About</a>
+  <a href="/contact" class="nav-link">Contact</a>
+ </nav>
+</div>
+</header>
+
+			<div class="ad-mobile"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9916094978890818"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9916094978890818"
+     data-ad-slot="7505991866"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+			<main class="main-layout">
+				<article class="content">
+ <h2 class="title">Android6以降の権限リクエストの書き方</h2>
+ <p>最近Androidで権限リクエストに関するコードをkotlinで書いたので記載</p>
+<p>色々書き方があるみたいだが、最近はランチャーを使った権限の取得の仕方をするみたい
+この方法だと、onRequestPermissionResultハンドラーなどを使わないため
+デベロッパーがリクエストコードを管理しなくてもいいらしい</p>
+<p>まず許可・拒否の結果を受けとるコールバックをランチャーに登録する</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> requestPermissionLauncher =
+    registerForActivityResult(RequestPermission()
+    ) { isGranted: Boolean <span style="color:#f92672">-&gt;</span>
+        <span style="color:#66d9ef">if</span> (isGranted) {
+			<span style="color:#75715e">// 許可時の処理
+</span><span style="color:#75715e"></span>        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#75715e">// 拒否時の処理
+</span><span style="color:#75715e"></span>        }
+    }
+</code></pre></td></tr></table>
+</div>
+</div><p>権限を確認したい場所に</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">when</span> {
+    ContextCompat.checkSelfPermission(
+            CONTEXT,
+            Manifest.permission.REQUESTED_PERMISSION
+            ) <span style="color:#f92672">==</span> PackageManager.PERMISSION_GRANTED <span style="color:#f92672">-&gt;</span> {
+		<span style="color:#75715e">// 許可された場合に実行
+</span><span style="color:#75715e"></span>    }
+
+    ActivityCompat.shouldShowRequestPermissionRationale(
+            <span style="color:#66d9ef">this</span>, Manifest.permission.REQUESTED_PERMISSION) <span style="color:#f92672">-&gt;</span> {
+		<span style="color:#75715e">// 説明UIを表示する必要がある場合に表示する
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// なぜ権限が必要なのかを表示するダイアログなどを出し
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// OKを押した場合は権限のリクエスト、キャンセルの場合は
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 何もせず継続させるUI等を表示させる
+</span><span style="color:#75715e"></span>		showInContextUI()
+    }
+
+    <span style="color:#66d9ef">else</span> <span style="color:#f92672">-&gt;</span> {
+		<span style="color:#75715e">// 権限のリクエスト
+</span><span style="color:#75715e"></span>        requestPermissionLauncher.launch(
+                Manifest.permission.REQUESTED_PERMISSION)
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+</article>
+
+
+				<aside class="sidebar">
+					<div class="ad-desktop"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9916094978890818"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9916094978890818"
+     data-ad-slot="7505991866"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+					</div>
+				</aside>
+			</main>
+			<footer class="site-footer"><div class="container">
+ <div class="copylight">
+  &copy; はんがー 
+   2025
+  
+ </div>
+</div>
+</footer>
+		</div>
+    </body>
+</html>

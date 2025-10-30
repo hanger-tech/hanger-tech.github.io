@@ -4,100 +4,148 @@
     <title>Posts on はんがーの備忘録</title>
     <link>https://www.perverseperson.net/posts/</link>
     <description>Recent content in Posts on はんがーの備忘録</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 23 Mar 2025 14:58:53 +0900</lastBuildDate>
-    <atom:link href="https://www.perverseperson.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Oct 2025 20:52:34 +0900</lastBuildDate><atom:link href="https://www.perverseperson.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ArchLinuxでのFcitx5の設定方法</title>
+      <link>https://www.perverseperson.net/posts/archlinux%E3%81%A7%E3%81%AEfcitx5%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Wed, 22 Oct 2025 20:52:34 +0900</pubDate>
+      
+      <guid>https://www.perverseperson.net/posts/archlinux%E3%81%A7%E3%81%AEfcitx5%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%96%B9%E6%B3%95/</guid>
+      <description>&lt;p&gt;ArchLinuxでFcitx5のインストール及び設定方法&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Android6以降の権限リクエストの書き方</title>
+      <link>https://www.perverseperson.net/posts/android6%E4%BB%A5%E9%99%8D%E3%81%AE%E6%A8%A9%E9%99%90%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9/</link>
+      <pubDate>Sun, 11 May 2025 00:25:41 +0900</pubDate>
+      
+      <guid>https://www.perverseperson.net/posts/android6%E4%BB%A5%E9%99%8D%E3%81%AE%E6%A8%A9%E9%99%90%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9/</guid>
+      <description>&lt;p&gt;最近Androidで権限リクエストに関するコードをkotlinで書いたので記載&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Hyper V上で入れ子になったVMのMACアドレススプーフィング</title>
       <link>https://www.perverseperson.net/posts/hyper-v%E4%B8%8A%E3%81%A7%E5%85%A5%E3%82%8C%E5%AD%90%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9Fvm%E3%81%AEmac%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%82%B9%E3%83%97%E3%83%BC%E3%83%95%E3%82%A3%E3%83%B3%E3%82%B0/</link>
       <pubDate>Sun, 23 Mar 2025 14:58:53 +0900</pubDate>
+      
       <guid>https://www.perverseperson.net/posts/hyper-v%E4%B8%8A%E3%81%A7%E5%85%A5%E3%82%8C%E5%AD%90%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9Fvm%E3%81%AEmac%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%82%B9%E3%83%97%E3%83%BC%E3%83%95%E3%82%A3%E3%83%B3%E3%82%B0/</guid>
       <description>&lt;p&gt;Hyper-V上のVMでHypervisorを実行するために必要なMACアドレススプーフィングを有効にする方法&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Hyper V上で入れ子になった仮想化（Nested Virtualization）</title>
       <link>https://www.perverseperson.net/posts/hyper-v%E4%B8%8A%E3%81%A7%E5%85%A5%E3%82%8C%E5%AD%90%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E4%BB%AE%E6%83%B3%E5%8C%96nested-virtualization/</link>
       <pubDate>Sun, 23 Mar 2025 14:47:23 +0900</pubDate>
+      
       <guid>https://www.perverseperson.net/posts/hyper-v%E4%B8%8A%E3%81%A7%E5%85%A5%E3%82%8C%E5%AD%90%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E4%BB%AE%E6%83%B3%E5%8C%96nested-virtualization/</guid>
       <description>&lt;p&gt;Hyper-V上のVMで仮想化を実現する方法&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>YAMAHA NVR510小型ONU経由でのフレッツ光ネクストのひかり電話の設定</title>
       <link>https://www.perverseperson.net/posts/yamaha-nvr510%E3%81%A7%E3%81%AE%E3%83%95%E3%83%AC%E3%83%83%E3%83%84%E5%85%89%E3%83%8D%E3%82%AF%E3%82%B9%E3%83%88%E3%81%AE%E3%81%B2%E3%81%8B%E3%82%8A%E9%9B%BB%E8%A9%B1%E3%81%AE%E8%A8%AD%E5%AE%9A/</link>
       <pubDate>Sat, 15 Mar 2025 18:33:18 +0900</pubDate>
+      
       <guid>https://www.perverseperson.net/posts/yamaha-nvr510%E3%81%A7%E3%81%AE%E3%83%95%E3%83%AC%E3%83%83%E3%83%84%E5%85%89%E3%83%8D%E3%82%AF%E3%82%B9%E3%83%88%E3%81%AE%E3%81%B2%E3%81%8B%E3%82%8A%E9%9B%BB%E8%A9%B1%E3%81%AE%E8%A8%AD%E5%AE%9A/</guid>
       <description>&lt;p&gt;NVR510小型ONU経由でのフレッツ光ネクストのひかり電話の設定&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>YAMAHA NVR510での小型ONU経由でのDHCPv6-PDとTransix(IPIP6トンネリング)の設定</title>
       <link>https://www.perverseperson.net/posts/yamaha-nvr510%E3%81%A7%E3%81%AE%E5%B0%8F%E5%9E%8Bonu%E7%B5%8C%E7%94%B1%E3%81%A7%E3%81%AEdhcpv6-pd%E3%81%A8transixipip6%E3%83%88%E3%83%B3%E3%83%8D%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%AE%E8%A8%AD%E5%AE%9A/</link>
       <pubDate>Sat, 15 Mar 2025 18:11:03 +0900</pubDate>
+      
       <guid>https://www.perverseperson.net/posts/yamaha-nvr510%E3%81%A7%E3%81%AE%E5%B0%8F%E5%9E%8Bonu%E7%B5%8C%E7%94%B1%E3%81%A7%E3%81%AEdhcpv6-pd%E3%81%A8transixipip6%E3%83%88%E3%83%B3%E3%83%8D%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%AE%E8%A8%AD%E5%AE%9A/</guid>
       <description>&lt;p&gt;NVR510での小型ONU経由でのDHCPv6-PDとTransixの設定&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>YAMAHA NVR510でのPPPoEの設定</title>
       <link>https://www.perverseperson.net/posts/yamaha-nvr510%E3%81%A7%E3%81%AEpppoe%E3%81%AE%E8%A8%AD%E5%AE%9A/</link>
       <pubDate>Thu, 13 Mar 2025 15:50:59 +0900</pubDate>
+      
       <guid>https://www.perverseperson.net/posts/yamaha-nvr510%E3%81%A7%E3%81%AEpppoe%E3%81%AE%E8%A8%AD%E5%AE%9A/</guid>
       <description>&lt;p&gt;YAMAHA NVR510のPPPoEの設定コマンド&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Hyper V上のUbuntu24.04で解像度を変更する方法</title>
       <link>https://www.perverseperson.net/posts/hyper-v%E4%B8%8A%E3%81%AEubuntu24.04%E3%81%A7%E8%A7%A3%E5%83%8F%E5%BA%A6%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/</link>
       <pubDate>Wed, 19 Feb 2025 14:07:23 +0900</pubDate>
+      
       <guid>https://www.perverseperson.net/posts/hyper-v%E4%B8%8A%E3%81%AEubuntu24.04%E3%81%A7%E8%A7%A3%E5%83%8F%E5%BA%A6%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/</guid>
       <description>&lt;p&gt;Hyper-v上で解像度を変更する&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Ubuntu24.04でUSキーボードに変更する</title>
       <link>https://www.perverseperson.net/posts/ubuntu24.04%E3%81%A7us%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%81%AB%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/</link>
       <pubDate>Wed, 19 Feb 2025 13:27:18 +0900</pubDate>
+      
       <guid>https://www.perverseperson.net/posts/ubuntu24.04%E3%81%A7us%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%81%AB%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/</guid>
       <description>&lt;p&gt;Ubuntu24.04でUSキーボードに変更する方法&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Hoguで生成されるページに自動的にバージョン情報が挿入させない方法</title>
       <link>https://www.perverseperson.net/posts/hugo%E3%81%A7%E7%94%9F%E6%88%90%E3%81%95%E3%82%8C%E3%82%8B%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AB%E8%87%AA%E5%8B%95%E7%9A%84%E3%81%AB%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E6%83%85%E5%A0%B1%E3%81%8C%E6%8C%BF%E5%85%A5%E3%81%95%E3%81%9B%E3%81%AA%E3%81%84%E6%96%B9%E6%B3%95/</link>
       <pubDate>Thu, 06 Feb 2025 22:32:23 +0900</pubDate>
+      
       <guid>https://www.perverseperson.net/posts/hugo%E3%81%A7%E7%94%9F%E6%88%90%E3%81%95%E3%82%8C%E3%82%8B%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AB%E8%87%AA%E5%8B%95%E7%9A%84%E3%81%AB%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E6%83%85%E5%A0%B1%E3%81%8C%E6%8C%BF%E5%85%A5%E3%81%95%E3%81%9B%E3%81%AA%E3%81%84%E6%96%B9%E6%B3%95/</guid>
       <description>&lt;p&gt;ページのヘッダにバージョン情報が表示されていたので無効にした。&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Let’s Encryptでのワイルドカード証明書更新をDNS認証で行う</title>
       <link>https://www.perverseperson.net/posts/lets-encrypt%E3%81%A7%E3%81%AE%E3%83%AF%E3%82%A4%E3%83%AB%E3%83%89%E3%82%AB%E3%83%BC%E3%83%89%E8%A8%BC%E6%98%8E%E6%9B%B8%E6%9B%B4%E6%96%B0%E3%82%92dns%E8%AA%8D%E8%A8%BC%E3%81%A7%E8%A1%8C%E3%81%86/</link>
       <pubDate>Wed, 05 Feb 2025 17:40:02 +0900</pubDate>
+      
       <guid>https://www.perverseperson.net/posts/lets-encrypt%E3%81%A7%E3%81%AE%E3%83%AF%E3%82%A4%E3%83%AB%E3%83%89%E3%82%AB%E3%83%BC%E3%83%89%E8%A8%BC%E6%98%8E%E6%9B%B8%E6%9B%B4%E6%96%B0%E3%82%92dns%E8%AA%8D%E8%A8%BC%E3%81%A7%E8%A1%8C%E3%81%86/</guid>
       <description>&lt;p&gt;ワイルドカード証明書をDNS認証で更新した時に、エラーが出たのでその対策。&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Ubuntu22.04をLUKSに暗号化してインストールする</title>
       <link>https://www.perverseperson.net/posts/ubuntu22.04%E3%82%92luks%E3%81%AB%E6%9A%97%E5%8F%B7%E5%8C%96%E3%81%97%E3%81%A6%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/</link>
       <pubDate>Wed, 05 Feb 2025 17:39:03 +0900</pubDate>
+      
       <guid>https://www.perverseperson.net/posts/ubuntu22.04%E3%82%92luks%E3%81%AB%E6%9A%97%E5%8F%B7%E5%8C%96%E3%81%97%E3%81%A6%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/</guid>
-      <description>&lt;p&gt;前提&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;必要なパーティショニングとLUKSによる暗号化、ファイルシステムを作成&#xA;　しておく&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;p&gt;前提&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;必要なパーティショニングとLUKSによる暗号化、ファイルシステムを作成
+　しておく&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
+    
     <item>
       <title>RaspberryPi 2BでのAsterisk 20の構築</title>
       <link>https://www.perverseperson.net/posts/raspberrypi-2b%E3%81%A7%E3%81%AEasterisk-20%E3%81%AE%E6%A7%8B%E7%AF%89/</link>
       <pubDate>Wed, 05 Feb 2025 17:32:28 +0900</pubDate>
+      
       <guid>https://www.perverseperson.net/posts/raspberrypi-2b%E3%81%A7%E3%81%AEasterisk-20%E3%81%AE%E6%A7%8B%E7%AF%89/</guid>
       <description>&lt;p&gt;Asterisk 20をラズパイ上で構築する方法があまりなかったので手順を記載&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Apacheで全体の共通設定は主サーバ設定に</title>
       <link>https://www.perverseperson.net/posts/apache%E3%81%A7%E5%85%A8%E4%BD%93%E3%81%AE%E5%85%B1%E9%80%9A%E8%A8%AD%E5%AE%9A%E3%81%AF%E4%B8%BB%E3%82%B5%E3%83%BC%E3%83%90%E8%A8%AD%E5%AE%9A%E3%81%AB/</link>
       <pubDate>Wed, 05 Feb 2025 17:29:33 +0900</pubDate>
+      
       <guid>https://www.perverseperson.net/posts/apache%E3%81%A7%E5%85%A8%E4%BD%93%E3%81%AE%E5%85%B1%E9%80%9A%E8%A8%AD%E5%AE%9A%E3%81%AF%E4%B8%BB%E3%82%B5%E3%83%BC%E3%83%90%E8%A8%AD%E5%AE%9A%E3%81%AB/</guid>
       <description>&lt;p&gt;.htaccessに書くと処理能力やセキュリティの低下を招く可能性があります。&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>WordPressのユーザ名をニックネームに変更する</title>
       <link>https://www.perverseperson.net/posts/wordpress%E3%81%AE%E3%83%A6%E3%83%BC%E3%82%B6%E5%90%8D%E3%82%92%E3%83%8B%E3%83%83%E3%82%AF%E3%83%8D%E3%83%BC%E3%83%A0%E3%81%AB%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/</link>
       <pubDate>Wed, 05 Feb 2025 17:28:36 +0900</pubDate>
+      
       <guid>https://www.perverseperson.net/posts/wordpress%E3%81%AE%E3%83%A6%E3%83%BC%E3%82%B6%E5%90%8D%E3%82%92%E3%83%8B%E3%83%83%E3%82%AF%E3%83%8D%E3%83%BC%E3%83%A0%E3%81%AB%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B/</guid>
-      <description>&lt;p&gt;WordPressではデフォルトで記事にユーザ名が表示されるので&lt;/p&gt;&#xA;&lt;p&gt;ニックネームに変更します。&lt;/p&gt;</description>
+      <description>&lt;p&gt;WordPressではデフォルトで記事にユーザ名が表示されるので&lt;/p&gt;
+&lt;p&gt;ニックネームに変更します。&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>

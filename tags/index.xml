@@ -4,8 +4,7 @@
     <title>Tags on はんがーの備忘録</title>
     <link>https://www.perverseperson.net/tags/</link>
     <description>Recent content in Tags on はんがーの備忘録</description>
-    <generator>Hugo</generator>
-    <language>ja-jp</language>
-    <atom:link href="https://www.perverseperson.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language><atom:link href="https://www.perverseperson.net/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,50 +1,121 @@
 <!DOCTYPE html>
-<html lang="ja-jp" dir="ltr">
-<head>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Hyper V上のUbuntu24.04で解像度を変更する方法 | はんがーの備忘録</title>
+<html>
+	<head><title>Hyper V上のUbuntu24.04で解像度を変更する方法 | はんがーの備忘録</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="ja" />
+<meta name="viewport" content="width=device-width, initial-scale-1.0" />
+<meta name="description" content="はんがーが内容を見返すためのサイト" />
+<meta name="author" content="はんがー" />
+<meta name="robots" content="index, follow" />
+<meta name="google-adsense-account" content="ca-pub-9916094978890818"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9916094978890818"
+     crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/scss/main.min.css">
 
-      <link rel="stylesheet" href="/css/main.min.57cb5aa1f6171fd708dc50d2f9d2c5edd641ce1f2443c479abde3cd08840261a.css" integrity="sha256-V8taofYXH9cI3FDS&#43;dLF7dZBzh8kQ8R5q9480IhAJho=" crossorigin="anonymous">
-
-
-      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
-
-
+<link rel="icon" href="/favicon.icon" />
 </head>
-<body>
-  <header>
-    <h1><a style="color:#000;text-decoration:none" href="/">はんがーの備忘録</a></h1>
+    <body>
+		<div class="layout-wrapper">
+			<header class="site-header"><div class="container">
+ <h2 class="logo">
+  <a href="/">はんがーの備忘録</a>
+ </h2>
+ <nav class="nav">
+  <a href="/" class="nav-link">TOP</a>
+  <a href="/about" class="nav-link">About</a>
+  <a href="/contact" class="nav-link">Contact</a>
+ </nav>
+</div>
+</header>
 
-  </header>
-  <main>
-    
-  <h1>Hyper V上のUbuntu24.04で解像度を変更する方法</h1>
+			<div class="ad-mobile"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9916094978890818"
+     crossorigin="anonymous"></script>
 
-  
-  
-  <time datetime="2025-02-19T14:07:23&#43;09:00">February 19, 2025</time>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9916094978890818"
+     data-ad-slot="7505991866"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
 
-  <p>Hyper-v上で解像度を変更する</p>
+			<main class="main-layout">
+				<article class="content">
+ <h2 class="title">Hyper V上のUbuntu24.04で解像度を変更する方法</h2>
+ <p>Hyper-v上で解像度を変更する</p>
 <p>参考: <a href="https://qiita.com/Ebokeb/items/5005f7b344acc3e198fa" title="Hyper-VでUbuntuを動かす際の解像度設定">Hyper-VでUbuntuを動かす際の解像度設定</a></p>
-<pre tabindex="0"><code>sudo cp -pi /etc/default/grub{,.bak}
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo cp -pi /etc/default/grub<span style="color:#f92672">{</span>,.bak<span style="color:#f92672">}</span>
 sudo vi /etc/default/grub
-</code></pre><p>&ldquo;video=hyperv_fb:1920x1080&quot;を追記</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>&ldquo;video=hyperv_fb:1920x1080&quot;を追記</p>
 <p>追記更新後保存</p>
-<pre tabindex="0"><code class="language-grub" data-lang="grub"># GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet splash&#34;
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet splash&#34;
 GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet splash video=hyperv_fb:1920x1080&#34;
-</code></pre><p>設定の更新コマンド実行</p>
-<pre tabindex="0"><code>sudo update-grub
-</code></pre><p>再起動</p>
-<pre tabindex="0"><code>sudo reboot
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div><p>設定の更新コマンド実行</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo update-grub
+</code></pre></td></tr></table>
+</div>
+</div><p>再起動</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo reboot
+</code></pre></td></tr></table>
+</div>
+</div>
+</article>
+
+
+				<aside class="sidebar">
+					<div class="ad-desktop"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9916094978890818"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9916094978890818"
+     data-ad-slot="7505991866"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+					</div>
+				</aside>
+			</main>
+			<footer class="site-footer"><div class="container">
+ <div class="copylight">
+  &copy; はんがー 
+   2025
   
-
-
-  </main>
-  <footer>
-    <p>Copyright 2025. All rights reserved.</p>
-
-  </footer>
-</body>
+ </div>
+</div>
+</footer>
+		</div>
+    </body>
 </html>
